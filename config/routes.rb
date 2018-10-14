@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     get '/name' => 'games#name_check'
     get '/rand_url' => 'games#rand_num'
+    get '/url_segment_number/:number' => 'games#rand_number'
   end
 
 end
