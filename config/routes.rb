@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
   namespace :api do
     get '/name' => 'games#name_check'
+    get '/rand_url' => 'games#rand_num'
   end
 
 end
