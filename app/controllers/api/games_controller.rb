@@ -23,6 +23,7 @@ class Api::GamesController < ApplicationController
     elsif @guess == @goal 
       @message = "you got it! Finally."
     end
+    @reminder = "your guess was #{@guess}"
     render 'rand_view.json.jbuilder'
 
   end
@@ -31,7 +32,6 @@ class Api::GamesController < ApplicationController
     goal = 36
     @guess = params[:number].to_i
 
-    # @guess = guess.to_i
     if @guess < goal
       @message = "your guess is too low! hype up!"
     elsif @guess > goal 
@@ -39,6 +39,7 @@ class Api::GamesController < ApplicationController
     elsif @guess == goal 
       @message = "you got it! Finally."
     end
+    @reminder = "your guess was #{@guess}"
     render 'rand_view_url_segment.json.jbuilder'
   end
 end
